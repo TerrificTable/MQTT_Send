@@ -1,0 +1,259 @@
+JFDML JFormDesigner: "7.0.5.4.420" Java: "11.0.14.1" encoding: "UTF-8"
+
+new FormModel {
+	"i18n.autoExternalize": true
+	"i18n.bundlePackage": "util.window.resources"
+	"i18n.bundleName": "MQTTWindow"
+	"i18n.keyPrefix": "MQTTWindow"
+	contentType: "form/swing"
+	root: new FormRoot {
+		auxiliary() {
+			"JavaCodeGenerator.defaultVariableModifiers": 1
+		}
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+			name: "this"
+			"defaultCloseOperation": 3
+			"title": "MQTT Client"
+			addEvent( new FormEvent( "java.awt.event.WindowListener", "windowClosed", "thisWindowClosed", true ) )
+			add( new FormContainer( "javax.swing.JTabbedPane", new FormLayoutManager( class javax.swing.JTabbedPane ) ) {
+				name: "tabbedPane1"
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+					name: "send"
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label1"
+						"text": new FormMessage( null, "MQTTWindow.label1.text" )
+						"horizontalAlignment": 0
+						"font": new java.awt.Font( "Segoe UI", 0, 30 )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 0
+						"y": 0
+						"width": 525
+						"height": 35
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "field_message"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 10
+						"y": 95
+						"width": 505
+						"height": 30
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label2"
+						"text": new FormMessage( null, "MQTTWindow.label2.text" )
+						"horizontalAlignment": 0
+						"font": new java.awt.Font( "Segoe UI", 0, 14 )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 0
+						"y": 60
+						"width": 525
+						"height": 30
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "button_send"
+						"text": new FormMessage( null, "MQTTWindow.button_send.text" )
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button_sendMouseClicked", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 275
+						"y": 170
+						"width": 145
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "error"
+						"horizontalAlignment": 0
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 0
+						"y": 135
+						"height": 25
+						"width": 525
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "button_disconnect"
+						"text": new FormMessage( null, "MQTTWindow.button_disconnect.text" )
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button_disconnectMouseClicked", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 110
+						"y": 170
+						"width": 145
+						"height": 30
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "button_exit"
+						"text": new FormMessage( null, "MQTTWindow.button_exit.text" )
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button_exitMouseClicked", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 200
+						"y": 215
+						"width": 135
+					} )
+					add( new FormComponent( "javax.swing.JSeparator" ) {
+						name: "separator1"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 70
+						"y": 40
+						"width": 385
+						"height": 3
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"title": new FormMessage( null, "MQTTWindow.send.tab.title_4" )
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+					name: "connect"
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label3"
+						"text": new FormMessage( null, "MQTTWindow.label3.text" )
+						"font": new java.awt.Font( "Segoe UI", 0, 30 )
+						"horizontalAlignment": 0
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 0
+						"y": 0
+						"width": 525
+						"height": 35
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label4"
+						"text": new FormMessage( null, "MQTTWindow.label4.text" )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 90
+						"y": 50
+						"width": 75
+						"height": 30
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "field_ip"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 165
+						"y": 55
+						"width": 260
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "field_username"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 165
+						"y": 90
+						"width": 260
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "field_channel"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 165
+						"y": 160
+						"width": 260
+					} )
+					add( new FormComponent( "javax.swing.JPasswordField" ) {
+						name: "field_password"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 165
+						"y": 125
+						"width": 260
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label5"
+						"text": new FormMessage( null, "MQTTWindow.label5.text" )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 90
+						"y": 85
+						"height": 30
+						"width": 75
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label6"
+						"text": new FormMessage( null, "MQTTWindow.label6.text" )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 90
+						"y": 120
+						"width": 75
+						"height": 30
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label7"
+						"text": new FormMessage( null, "MQTTWindow.label7.text" )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 90
+						"y": 155
+						"width": 75
+						"height": 30
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "button_connect"
+						"text": new FormMessage( null, "MQTTWindow.button_connect.text" )
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button_connectMouseClicked", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 170
+						"y": 220
+						"width": 170
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "cerror"
+						"horizontalAlignment": 0
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 0
+						"y": 195
+						"width": 525
+						"height": 26
+					} )
+					add( new FormComponent( "javax.swing.JSeparator" ) {
+						name: "separator2"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 385
+						"height": 3
+						"x": 70
+						"y": 40
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"title": new FormMessage( null, "MQTTWindow.connect.tab.title" )
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+					name: "settings"
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label8"
+						"text": new FormMessage( null, "MQTTWindow.label8.text" )
+						"horizontalAlignment": 0
+						"font": new java.awt.Font( "Segoe UI", 0, 30 )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 0
+						"y": -5
+						"width": 525
+						"height": 45
+					} )
+					add( new FormComponent( "javax.swing.JCheckBox" ) {
+						name: "connect_on_startup"
+						"text": new FormMessage( null, "MQTTWindow.connect_on_startup.text" )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 15
+						"y": 65
+						"width": 190
+						"height": 25
+					} )
+					add( new FormComponent( "javax.swing.JCheckBox" ) {
+						name: "save_conn_details"
+						"text": new FormMessage( null, "MQTTWindow.save_conn_details.text" )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 190
+						"height": 25
+						"x": 15
+						"y": 95
+					} )
+					add( new FormComponent( "javax.swing.JSeparator" ) {
+						name: "separator3"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 385
+						"height": 3
+						"x": 70
+						"y": 45
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"title": new FormMessage( null, "MQTTWindow.settings.tab.title" )
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 0
+				"y": 0
+				"width": 525
+				"height": 300
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 15, 0 )
+			"size": new java.awt.Dimension( 525, 330 )
+		} )
+	}
+}
