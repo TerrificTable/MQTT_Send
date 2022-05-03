@@ -305,6 +305,7 @@ public class MQTTWindow extends JFrame {
 
                 //---- save_conn_details ----
                 save_conn_details.setText(bundle.getString("MQTTWindow.save_conn_details.text"));
+                save_conn_details.setSelected(true);
                 settings.add(save_conn_details);
                 save_conn_details.setBounds(15, 95, 190, 25);
                 settings.add(separator3);
