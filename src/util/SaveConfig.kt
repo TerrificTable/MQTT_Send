@@ -5,6 +5,7 @@ import util.encryption.Base85Decoder
 import util.encryption.Base85Encoder
 import java.io.*
 
+//
 class SaveConfig {
     companion object {
 
