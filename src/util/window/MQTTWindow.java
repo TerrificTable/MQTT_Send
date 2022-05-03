@@ -25,57 +25,17 @@ public class MQTTWindow extends JFrame {
         try {
             Send.Companion.send(field_message.getText());
         } catch (Exception exc) {
-            exc.printStackTrace();
+            System.out.println("ERROR [MQTTWin]-[button_send]: " + exc.getMessage());
             error.setText(exc.getMessage());
         }
     }
 
     private void button_connectMouseClicked(MouseEvent e) {
-        cerror.setText("");
-
-        boolean ip = false;
-        boolean username = false;
-        boolean password = false;
-        boolean channel = false;
-
-        if (!Objects.equals(field_ip.getText(), Send.Companion.getIP())) {
-            ip = true;
-            Send.Companion.setIP(field_ip.getText());
-        }
-        if (!Objects.equals(field_username.getText(), Send.Companion.getUSERNAME())) {
-            username = true;
-            Send.Companion.setUSERNAME(field_username.getText());
-        }
-        if (!Objects.equals(field_password.getText(), Send.Companion.getPASSWORD())) {
-            password = true;
-            Send.Companion.setPASSWORD(field_password.getText());
-        }
-        if (!Objects.equals(field_channel.getText(), Send.Companion.getRECEIVE())) {
-            channel = true;
-            Send.Companion.setRECEIVE(field_channel.getText());
-        }
-
-        try {
-            SaveConfig.Companion.save();
-            if (!Objects.requireNonNull(Send.Companion.getClient()).isConnected()) {
-                Send.Companion.init();
-            } else if (ip && username && password && channel) {
-                Send.Companion.init();
-            }
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            cerror.setText(ex.getMessage());
-        }
+        Buttons.Companion.connect();
     }
 
     private void button_disconnectMouseClicked(MouseEvent e) {
-        error.setText("");
-        try {
-            Objects.requireNonNull(Send.Companion.getClient()).disconnect();
-        } catch (MqttException ex) {
-            ex.printStackTrace();
-            error.setText(ex.getMessage());
-        }
+        Buttons.Companion.disconnect();
     }
 
     private void button_exitMouseClicked(MouseEvent e) {
@@ -102,6 +62,7 @@ public class MQTTWindow extends JFrame {
         button_disconnect = new JButton();
         button_exit = new JButton();
         separator1 = new JSeparator();
+        status = new JLabel();
         connect = new JPanel();
         label3 = new JLabel();
         label4 = new JLabel();
@@ -195,6 +156,12 @@ public class MQTTWindow extends JFrame {
                 button_exit.setBounds(200, 215, 135, button_exit.getPreferredSize().height);
                 send.add(separator1);
                 separator1.setBounds(70, 40, 385, 3);
+
+                //---- status ----
+                status.setText(bundle.getString("MQTTWindow.status.text"));
+                status.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+                send.add(status);
+                status.setBounds(10, 5, 210, 26);
 
                 {
                     // compute preferred size
@@ -361,6 +328,7 @@ public class MQTTWindow extends JFrame {
     public JButton button_disconnect;
     public JButton button_exit;
     public JSeparator separator1;
+    public JLabel status;
     public JPanel connect;
     public JLabel label3;
     public JLabel label4;

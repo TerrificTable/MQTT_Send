@@ -94,6 +94,16 @@ new FormModel {
 						"width": 385
 						"height": 3
 					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "status"
+						"text": new FormMessage( null, "MQTTWindow.status.text" )
+						"font": new java.awt.Font( "Segoe UI", 0, 14 )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 10
+						"y": 5
+						"width": 210
+						"height": 26
+					} )
 				}, new FormLayoutConstraints( null ) {
 					"title": new FormMessage( null, "MQTTWindow.send.tab.title_4" )
 				} )

@@ -12,12 +12,18 @@ public class Main {
     public static boolean isWindow = true;
     private static boolean change = false;
 
-    public static void main(String[] args) throws MqttException {
+    public static void main(String[] args) {
         SaveConfig.Companion.load();
         Send.Companion.setPORT("1883");
 
-        if (window.connect_on_startup.isSelected())
+        window.status.setText("Status: Disconnected");
+        window.button_disconnect.setText("Connect");
+
+        if (window.connect_on_startup.isSelected()) {
             Send.Companion.init();
+            window.status.setText("Status: Connected");
+            window.button_disconnect.setText("Disconnect");
+        }
 
         window.setVisible(true);
     }
@@ -32,7 +38,7 @@ public class Main {
             if (ch.equals("c"))
                 change = true;
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("ERROR [cli]: " + e.getMessage());
             change = true;
         }
 
