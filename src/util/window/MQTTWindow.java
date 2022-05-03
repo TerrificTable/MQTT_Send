@@ -4,9 +4,8 @@
 
 package util.window;
 
-import org.eclipse.paho.client.mqttv3.MqttException;
 import util.Send;
-import util.SaveConfig;
+import util.Configs;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -44,7 +43,7 @@ public class MQTTWindow extends JFrame {
     }
 
     private void thisWindowClosed(WindowEvent e) {
-        SaveConfig.Companion.save();
+        Configs.Companion.save();
         this.dispose();
         System.exit(0);
     }

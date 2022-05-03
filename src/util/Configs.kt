@@ -6,7 +6,7 @@ import util.encryption.Base85Encoder
 import java.io.*
 
 //
-class SaveConfig {
+class Configs {
     companion object {
 
         var _ConfigFile: File = File(System.getProperty("user.home") + "\\Desktop\\")

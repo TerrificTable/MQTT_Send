@@ -1,5 +1,5 @@
 import org.eclipse.paho.client.mqttv3.MqttException;
-import util.SaveConfig;
+import util.Configs;
 import util.Send;
 import util.window.MQTTWindow;
 
@@ -13,7 +13,7 @@ public class Main {
     private static boolean change = false;
 
     public static void main(String[] args) {
-        SaveConfig.Companion.load();
+        Configs.Companion.load();
         Send.Companion.setPORT("1883");
 
         window.status.setText("Status: Disconnected");
@@ -33,7 +33,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         try {
-            SaveConfig.Companion.load();
+            Configs.Companion.load();
             String ch = scanner.nextLine();
             if (ch.equals("c"))
                 change = true;
@@ -60,7 +60,7 @@ public class Main {
             Send.Companion.setRECEIVE(channel);     // "test"
             Send.Companion.setUSERNAME(username);   // "mqtt"
             Send.Companion.setPASSWORD(password);   // "terrific"
-            SaveConfig.Companion.save();
+            Configs.Companion.save();
         }
         Send.Companion.setPORT("1883");
         // =========
@@ -73,7 +73,7 @@ public class Main {
         String input = scanner.nextLine();
         while (!Objects.equals(input, ".quit")) {
             System.out.println();
-            SaveConfig.Companion.save();
+            Configs.Companion.save();
 
             Send.Companion.send(input);
 

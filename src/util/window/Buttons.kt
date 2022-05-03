@@ -1,14 +1,13 @@
 package util.window
 
 import Main
-import util.SaveConfig.Companion.save
+import util.Configs.Companion.save
 import util.Send.Companion.Client
 import util.Send.Companion.IP
 import util.Send.Companion.PASSWORD
 import util.Send.Companion.RECEIVE
 import util.Send.Companion.USERNAME
 import util.Send.Companion.init
-import java.util.*
 
 class Buttons {
     companion object {
