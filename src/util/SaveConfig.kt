@@ -8,14 +8,14 @@ import java.io.*
 class SaveConfig {
     companion object {
 
+        var _ConfigFile: File = File(System.getProperty("user.home") + "\\Desktop\\")
+
         var ip = ""
         var username = ""
         var password = ""
         var channel = ""
 
         fun save() {
-
-            var _ConfigFile: File = File("C:/Users/Admin/Desktop/")
 
             val save_file = File(_ConfigFile.absolutePath, "Config.txt")
             val save_out = BufferedWriter(FileWriter(save_file))
@@ -42,8 +42,6 @@ class SaveConfig {
         }
 
         fun load() {
-
-            var _ConfigFile: File = File("C:/Users/Admin/Desktop/")
 
             val file = File(_ConfigFile.absolutePath, "Config.txt")
             val fstream = FileInputStream(file.absolutePath)
