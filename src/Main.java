@@ -15,6 +15,7 @@ public class Main {
     public static void main(String[] args) {
         Configs.Companion.load();
         Send.Companion.setPORT("1883");
+        window.setVisible(true);
 
         window.status.setText("Status: Disconnected");
         window.button_disconnect.setText("Connect");
@@ -25,7 +26,6 @@ public class Main {
             window.button_disconnect.setText("Disconnect");
         }
 
-        window.setVisible(true);
     }
 
     public static void cli() throws MqttException {
