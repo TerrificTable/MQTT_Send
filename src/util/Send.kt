@@ -11,6 +11,7 @@ class Send {
         var IP: String? = null
         var PORT: String? = null
         var RECEIVE: String? = null
+        var SUBSRIBE: String? = null
         var USERNAME: String? = null
         var PASSWORD: String? = null
         var Client: MqttClient? = null;
@@ -25,9 +26,26 @@ class Send {
             println("Connecting to: $IP")
 
             Client!!.connect(con)
-
         }
 
+        fun subsrcibe() {
+            // TODO
+            try {
+                Client?.disconnect()
+            } catch (ex: Exception) {
+                ex.printStackTrace()
+            }
+
+            Client = MqttClient("tcp://$IP:$PORT", MqttClient.generateClientId(), MemoryPersistence())
+            val con = MqttConnectOptions()
+            con.isCleanSession = true
+            con.userName = USERNAME
+            con.password = PASSWORD?.toCharArray() ?: CharArray(0)
+
+            println("Subsribed to: $IP:$SUBSRIBE")
+
+            Client!!.subscribe(SUBSRIBE)
+        }
 
         fun send(msg: String) {
 
