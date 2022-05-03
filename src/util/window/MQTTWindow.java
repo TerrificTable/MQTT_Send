@@ -21,6 +21,11 @@ public class MQTTWindow extends JFrame {
     }
 
     private void button_sendMouseClicked(MouseEvent e) {
+        if (Send.Companion.getClient() == null || !Send.Companion.getClient().isConnected()) {
+            error.setText("No Connection to Client/Server");
+            return;
+        }
+
         try {
             Send.Companion.send(field_message.getText());
         } catch (Exception exc) {

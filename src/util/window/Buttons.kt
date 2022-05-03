@@ -25,7 +25,7 @@ class Buttons {
                     conn()
                 }
             } catch (ex: Exception) {
-                println("ERROR [MQTTWin-BUTTONS]-[disconnect]: $ex")
+                println("ERROR [MQTTWin-BUTTONS]-[disconnect] (Client::isConnected): ${ex.message}")
                 Main.window.error.text = ex.message
             }
         }
@@ -33,40 +33,27 @@ class Buttons {
         fun connect() {
             Main.window.cerror.text = ""
 
-            var ip = false
-            var username = false
-            var password = false
-            var channel = false
-
-            if (Main.window.field_ip.text != IP) {
-                ip = true
+            if (Main.window.field_ip.text != IP)
                 IP = Main.window.field_ip.text
-            }
-            if (Main.window.field_username.text != USERNAME) {
-                username = true
+            if (Main.window.field_username.text != USERNAME)
                 USERNAME = Main.window.field_username.text
-            }
-            if (Main.window.field_password.text != PASSWORD) {
-                password = true
+            if (Main.window.field_password.text != PASSWORD)
                 PASSWORD = Main.window.field_password.text
-            }
-            if (Main.window.field_channel.text != RECEIVE) {
-                channel = true
+            if (Main.window.field_channel.text != RECEIVE)
                 RECEIVE = Main.window.field_channel.text
-            }
 
+            conn()
+        }
+
+        @JvmStatic
+        fun conn() {
             try {
-                conn()
+                save()
+                init()
             } catch (ex: Exception) {
-                println("ERROR [MQTTWIN-BUTTONS]-[connect]: $ex.message")
+                println("ERROR [MQTTWIN-BUTTONS]-[connect/disconnect] (conn): $ex.message")
                 Main.window.cerror.text = ex.message
             }
         }
-
-        fun conn() {
-            save()
-            init()
-        }
-
     }
 }

@@ -13,7 +13,10 @@ public class Main {
     private static boolean change = false;
 
     public static void main(String[] args) {
-        Configs.Companion.load();
+        try {
+            Configs.Companion.load();
+        } catch (Exception ignored) {  }
+
         Send.Companion.setPORT("1883");
         window.setVisible(true);
 

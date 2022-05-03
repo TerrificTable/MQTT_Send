@@ -9,45 +9,45 @@ import java.io.*
 class Configs {
     companion object {
 
-        var _ConfigFile: File = File(System.getProperty("user.home") + "\\Desktop\\")
+        private var ConfigFile: File = File(System.getProperty("user.home") + "\\Desktop\\")
 
-        var ip = ""
-        var username = ""
-        var password = ""
-        var channel = ""
+        private var ip = ""
+        private var username = ""
+        private var password = ""
+        private var channel = ""
 
         fun save() {
 
-            val save_file = File(_ConfigFile.absolutePath, "Config.txt")
-            val save_out = BufferedWriter(FileWriter(save_file))
+            val saveFile = File(ConfigFile.absolutePath, "Config.txt")
+            val isNewFileCreated :Boolean = saveFile.createNewFile()
+            val saveOut = BufferedWriter(FileWriter(saveFile))
 
             password = Base85Encoder.Base85Encode(Send.PASSWORD.toString())
 
             if (Main.window.save_conn_details.isSelected) {
-                save_out.write("IP:" + Send.IP)
-                save_out.write("\r\n")
-                save_out.write("USERNAME:" + Send.USERNAME)
-                save_out.write("\r\n")
-                save_out.write("PASSWORD:$password")
-                save_out.write("\r\n")
-                save_out.write("CHANNEL:" + Send.RECEIVE)
-                save_out.write("\r\n")
+                saveOut.write("IP:" + Send.IP)
+                saveOut.write("\r\n")
+                saveOut.write("USERNAME:" + Send.USERNAME)
+                saveOut.write("\r\n")
+                saveOut.write("PASSWORD:$password")
+                saveOut.write("\r\n")
+                saveOut.write("CHANNEL:" + Send.RECEIVE)
+                saveOut.write("\r\n")
             }
 
-            save_out.write("SAVE:" + (if (Main.window.save_conn_details.isSelected) "On" else "Off"))
-            save_out.write("\r\n")
-            save_out.write("AUTO_CONN:" + (if (Main.window.connect_on_startup.isSelected) "On" else "Off"))
-            save_out.write("\r\n")
+            saveOut.write("SAVE:" + (if (Main.window.save_conn_details.isSelected) "On" else "Off"))
+            saveOut.write("\r\n")
+            saveOut.write("AUTO_CONN:" + (if (Main.window.connect_on_startup.isSelected) "On" else "Off"))
+            saveOut.write("\r\n")
 
-            save_out.close()
+            saveOut.close()
         }
 
         fun load() {
-
-            val file = File(_ConfigFile.absolutePath, "Config.txt")
-            val fstream = FileInputStream(file.absolutePath)
-            val file_in = DataInputStream(fstream)
-            val br = BufferedReader(InputStreamReader(file_in))
+            val file = File(ConfigFile.absolutePath, "Config.txt")
+            val stream = FileInputStream(file.absolutePath)
+            val fileIn = DataInputStream(stream)
+            val br = BufferedReader(InputStreamReader(fileIn))
 
 
             var line: String? = br.readLine()
