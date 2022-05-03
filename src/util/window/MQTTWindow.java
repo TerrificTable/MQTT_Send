@@ -152,7 +152,7 @@ public class MQTTWindow extends JFrame {
                     }
                 });
                 send.add(button_exit);
-                button_exit.setBounds(200, 215, 135, button_exit.getPreferredSize().height);
+                button_exit.setBounds(200, 212, 135, button_exit.getPreferredSize().height);
                 send.add(separator1);
                 separator1.setBounds(70, 40, 385, 3);
 
