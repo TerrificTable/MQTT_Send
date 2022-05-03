@@ -32,14 +32,36 @@ public class MQTTWindow extends JFrame {
 
     private void button_connectMouseClicked(MouseEvent e) {
         cerror.setText("");
-        Send.Companion.setIP(field_ip.getText());
-        Send.Companion.setUSERNAME(field_username.getText());
-        Send.Companion.setPASSWORD(field_password.getText());
-        Send.Companion.setRECEIVE(field_channel.getText());
+
+        boolean ip = false;
+        boolean username = false;
+        boolean password = false;
+        boolean channel = false;
+
+        if (!Objects.equals(field_ip.getText(), Send.Companion.getIP())) {
+            ip = true;
+            Send.Companion.setIP(field_ip.getText());
+        }
+        if (!Objects.equals(field_username.getText(), Send.Companion.getUSERNAME())) {
+            username = true;
+            Send.Companion.setUSERNAME(field_username.getText());
+        }
+        if (!Objects.equals(field_password.getText(), Send.Companion.getPASSWORD())) {
+            password = true;
+            Send.Companion.setPASSWORD(field_password.getText());
+        }
+        if (!Objects.equals(field_channel.getText(), Send.Companion.getRECEIVE())) {
+            channel = true;
+            Send.Companion.setRECEIVE(field_channel.getText());
+        }
 
         try {
             SaveConfig.Companion.save();
-            Send.Companion.init();
+            if (!Objects.requireNonNull(Send.Companion.getClient()).isConnected()) {
+                Send.Companion.init();
+            } else if (ip && username && password && channel) {
+                Send.Companion.init();
+            }
         } catch (Exception ex) {
             ex.printStackTrace();
             cerror.setText(ex.getMessage());
