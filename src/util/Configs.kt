@@ -39,6 +39,8 @@ class Configs {
             saveOut.write("\r\n")
             saveOut.write("AUTO_CONN:" + (if (Main.window.connect_on_startup.isSelected) "On" else "Off"))
             saveOut.write("\r\n")
+            saveOut.write("SCHANNEL:" + Send.SUBSCRIBE)
+            saveOut.write("\r\n")
 
             saveOut.close()
         }
@@ -71,6 +73,9 @@ class Configs {
                 }
                 else if (content[0] == "AUTO_CONN") {
                     Main.window.connect_on_startup.isSelected = content[1] == "On"
+                }
+                else if (content[0] == "SCHANNEL") {
+                    Main.window.field_subsribe.text = content[1]
                 }
 
                 Send.IP = ip
