@@ -75,19 +75,6 @@ public class MQTTWindow extends JFrame {
         button_exit = new JButton();
         separator6 = new JSeparator();
         status = new JLabel();
-        connect2 = new JPanel();
-        label14 = new JLabel();
-        label15 = new JLabel();
-        field_ip = new JTextField();
-        field_username = new JTextField();
-        field_channel = new JTextField();
-        field_password = new JPasswordField();
-        label16 = new JLabel();
-        label17 = new JLabel();
-        label18 = new JLabel();
-        button_connect = new JButton();
-        cerror = new JLabel();
-        separator7 = new JSeparator();
         panel2 = new JPanel();
         sstatus = new JLabel();
         label = new JLabel();
@@ -101,6 +88,19 @@ public class MQTTWindow extends JFrame {
         subscribe_log = new JTextArea();
         label2 = new JLabel();
         serror = new JLabel();
+        connect2 = new JPanel();
+        label14 = new JLabel();
+        label15 = new JLabel();
+        field_ip = new JTextField();
+        field_username = new JTextField();
+        field_channel = new JTextField();
+        field_password = new JPasswordField();
+        label16 = new JLabel();
+        label17 = new JLabel();
+        label18 = new JLabel();
+        button_connect = new JButton();
+        cerror = new JLabel();
+        separator7 = new JSeparator();
         settings2 = new JPanel();
         label22 = new JLabel();
         connect_on_startup = new JCheckBox();
@@ -206,80 +206,6 @@ public class MQTTWindow extends JFrame {
             }
             tabbedPane2.addTab(bundle.getString("MQTTWindow.send2.tab.title"), send2);
 
-            //======== connect2 ========
-            {
-                connect2.setLayout(null);
-
-                //---- label14 ----
-                label14.setText(bundle.getString("MQTTWindow.label14.text"));
-                label14.setFont(new Font("Segoe UI", Font.PLAIN, 30));
-                label14.setHorizontalAlignment(SwingConstants.CENTER);
-                connect2.add(label14);
-                label14.setBounds(0, 0, 525, 35);
-
-                //---- label15 ----
-                label15.setText(bundle.getString("MQTTWindow.label15.text"));
-                connect2.add(label15);
-                label15.setBounds(90, 50, 75, 30);
-                connect2.add(field_ip);
-                field_ip.setBounds(165, 55, 260, field_ip.getPreferredSize().height);
-                connect2.add(field_username);
-                field_username.setBounds(165, 90, 260, field_username.getPreferredSize().height);
-                connect2.add(field_channel);
-                field_channel.setBounds(165, 160, 260, field_channel.getPreferredSize().height);
-                connect2.add(field_password);
-                field_password.setBounds(165, 125, 260, field_password.getPreferredSize().height);
-
-                //---- label16 ----
-                label16.setText(bundle.getString("MQTTWindow.label16.text"));
-                connect2.add(label16);
-                label16.setBounds(90, 85, 75, 30);
-
-                //---- label17 ----
-                label17.setText(bundle.getString("MQTTWindow.label17.text"));
-                connect2.add(label17);
-                label17.setBounds(90, 120, 75, 30);
-
-                //---- label18 ----
-                label18.setText(bundle.getString("MQTTWindow.label18.text"));
-                connect2.add(label18);
-                label18.setBounds(90, 155, 75, 30);
-
-                //---- button_connect ----
-                button_connect.setText(bundle.getString("MQTTWindow.button_connect.text"));
-                button_connect.addMouseListener(new MouseAdapter() {
-                    @Override
-                    public void mouseClicked(MouseEvent e) {
-                        button_connectMouseClicked(e);
-                    }
-                });
-                connect2.add(button_connect);
-                button_connect.setBounds(170, 220, 170, button_connect.getPreferredSize().height);
-
-                //---- cerror ----
-                cerror.setHorizontalAlignment(SwingConstants.CENTER);
-                connect2.add(cerror);
-                cerror.setBounds(0, 195, 525, 26);
-                connect2.add(separator7);
-                separator7.setBounds(70, 40, 385, 3);
-
-                {
-                    // compute preferred size
-                    Dimension preferredSize = new Dimension();
-                    for(int i = 0; i < connect2.getComponentCount(); i++) {
-                        Rectangle bounds = connect2.getComponent(i).getBounds();
-                        preferredSize.width = Math.max(bounds.x + bounds.width, preferredSize.width);
-                        preferredSize.height = Math.max(bounds.y + bounds.height, preferredSize.height);
-                    }
-                    Insets insets = connect2.getInsets();
-                    preferredSize.width += insets.right;
-                    preferredSize.height += insets.bottom;
-                    connect2.setMinimumSize(preferredSize);
-                    connect2.setPreferredSize(preferredSize);
-                }
-            }
-            tabbedPane2.addTab(bundle.getString("MQTTWindow.connect2.tab.title"), connect2);
-
             //======== panel2 ========
             {
                 panel2.setLayout(null);
@@ -363,6 +289,80 @@ public class MQTTWindow extends JFrame {
             }
             tabbedPane2.addTab(bundle.getString("MQTTWindow.panel2.tab.title"), panel2);
 
+            //======== connect2 ========
+            {
+                connect2.setLayout(null);
+
+                //---- label14 ----
+                label14.setText(bundle.getString("MQTTWindow.label14.text"));
+                label14.setFont(new Font("Segoe UI", Font.PLAIN, 30));
+                label14.setHorizontalAlignment(SwingConstants.CENTER);
+                connect2.add(label14);
+                label14.setBounds(0, 0, 525, 35);
+
+                //---- label15 ----
+                label15.setText(bundle.getString("MQTTWindow.label15.text"));
+                connect2.add(label15);
+                label15.setBounds(90, 50, 75, 30);
+                connect2.add(field_ip);
+                field_ip.setBounds(165, 55, 260, field_ip.getPreferredSize().height);
+                connect2.add(field_username);
+                field_username.setBounds(165, 90, 260, field_username.getPreferredSize().height);
+                connect2.add(field_channel);
+                field_channel.setBounds(165, 160, 260, field_channel.getPreferredSize().height);
+                connect2.add(field_password);
+                field_password.setBounds(165, 125, 260, field_password.getPreferredSize().height);
+
+                //---- label16 ----
+                label16.setText(bundle.getString("MQTTWindow.label16.text"));
+                connect2.add(label16);
+                label16.setBounds(90, 85, 75, 30);
+
+                //---- label17 ----
+                label17.setText(bundle.getString("MQTTWindow.label17.text"));
+                connect2.add(label17);
+                label17.setBounds(90, 120, 75, 30);
+
+                //---- label18 ----
+                label18.setText(bundle.getString("MQTTWindow.label18.text"));
+                connect2.add(label18);
+                label18.setBounds(90, 155, 75, 30);
+
+                //---- button_connect ----
+                button_connect.setText(bundle.getString("MQTTWindow.button_connect.text"));
+                button_connect.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        button_connectMouseClicked(e);
+                    }
+                });
+                connect2.add(button_connect);
+                button_connect.setBounds(170, 220, 170, button_connect.getPreferredSize().height);
+
+                //---- cerror ----
+                cerror.setHorizontalAlignment(SwingConstants.CENTER);
+                connect2.add(cerror);
+                cerror.setBounds(0, 195, 525, 26);
+                connect2.add(separator7);
+                separator7.setBounds(70, 40, 385, 3);
+
+                {
+                    // compute preferred size
+                    Dimension preferredSize = new Dimension();
+                    for(int i = 0; i < connect2.getComponentCount(); i++) {
+                        Rectangle bounds = connect2.getComponent(i).getBounds();
+                        preferredSize.width = Math.max(bounds.x + bounds.width, preferredSize.width);
+                        preferredSize.height = Math.max(bounds.y + bounds.height, preferredSize.height);
+                    }
+                    Insets insets = connect2.getInsets();
+                    preferredSize.width += insets.right;
+                    preferredSize.height += insets.bottom;
+                    connect2.setMinimumSize(preferredSize);
+                    connect2.setPreferredSize(preferredSize);
+                }
+            }
+            tabbedPane2.addTab(bundle.getString("MQTTWindow.connect2.tab.title"), connect2);
+
             //======== settings2 ========
             {
                 settings2.setLayout(null);
@@ -443,19 +443,6 @@ public class MQTTWindow extends JFrame {
     public JButton button_exit;
     public JSeparator separator6;
     public JLabel status;
-    public JPanel connect2;
-    public JLabel label14;
-    public JLabel label15;
-    public JTextField field_ip;
-    public JTextField field_username;
-    public JTextField field_channel;
-    public JPasswordField field_password;
-    public JLabel label16;
-    public JLabel label17;
-    public JLabel label18;
-    public JButton button_connect;
-    public JLabel cerror;
-    public JSeparator separator7;
     public JPanel panel2;
     public JLabel sstatus;
     public JLabel label;
@@ -469,6 +456,19 @@ public class MQTTWindow extends JFrame {
     public JTextArea subscribe_log;
     public JLabel label2;
     public JLabel serror;
+    public JPanel connect2;
+    public JLabel label14;
+    public JLabel label15;
+    public JTextField field_ip;
+    public JTextField field_username;
+    public JTextField field_channel;
+    public JPasswordField field_password;
+    public JLabel label16;
+    public JLabel label17;
+    public JLabel label18;
+    public JButton button_connect;
+    public JLabel cerror;
+    public JSeparator separator7;
     public JPanel settings2;
     public JLabel label22;
     public JCheckBox connect_on_startup;

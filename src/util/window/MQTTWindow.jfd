@@ -108,6 +108,110 @@ new FormModel {
 					"title": new FormMessage( null, "MQTTWindow.send2.tab.title" )
 				} )
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+					name: "panel2"
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "sstatus"
+						"text": new FormMessage( null, "MQTTWindow.sstatus.text" )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 5
+						"y": 5
+						"width": 190
+						"height": 25
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label"
+						"text": new FormMessage( null, "MQTTWindow.label.text" )
+						"horizontalAlignment": 0
+						"font": new java.awt.Font( "Segoe UI", 0, 30 )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 0
+						"y": 0
+						"width": 525
+						"height": 35
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "button1"
+						"text": new FormMessage( null, "MQTTWindow.button1.text" )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 0
+						"y": 262
+					} )
+					add( new FormComponent( "javax.swing.JSeparator" ) {
+						name: "separator8"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 385
+						"height": 3
+						"x": 70
+						"y": 40
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label20"
+						"text": new FormMessage( null, "MQTTWindow.label20.text" )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 125
+						"y": 56
+						"width": 65
+						"height": 30
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "field_subsribe"
+						"text": new FormMessage( null, "MQTTWindow.field_subsribe.text" )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 190
+						"y": 57
+						"width": 220
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "button_subscripe"
+						"text": new FormMessage( null, "MQTTWindow.button_subscripe.text" )
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button_subscripeMouseClicked", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 190
+						"y": 90
+						"width": 100
+					} )
+					add( new FormComponent( "javax.swing.JSeparator" ) {
+						name: "separator9"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 0
+						"y": 144
+						"width": 525
+						"height": 3
+					} )
+					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+						name: "scrollPane2"
+						add( new FormComponent( "javax.swing.JTextArea" ) {
+							name: "subscribe_log"
+							"editable": false
+						} )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 50
+						"y": 155
+						"width": 465
+						"height": 102
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label2"
+						"text": new FormMessage( null, "MQTTWindow.label2.text" )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 9
+						"y": 155
+						"height": 30
+						"width": 41
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "serror"
+						"horizontalAlignment": 0
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 0
+						"y": 120
+						"width": 525
+						"height": 25
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"title": new FormMessage( null, "MQTTWindow.panel2.tab.title" )
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 					name: "connect2"
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "label14"
@@ -212,110 +316,6 @@ new FormModel {
 					} )
 				}, new FormLayoutConstraints( null ) {
 					"title": new FormMessage( null, "MQTTWindow.connect2.tab.title" )
-				} )
-				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
-					name: "panel2"
-					add( new FormComponent( "javax.swing.JLabel" ) {
-						name: "sstatus"
-						"text": new FormMessage( null, "MQTTWindow.sstatus.text" )
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-						"x": 5
-						"y": 5
-						"width": 190
-						"height": 25
-					} )
-					add( new FormComponent( "javax.swing.JLabel" ) {
-						name: "label"
-						"text": new FormMessage( null, "MQTTWindow.label.text" )
-						"horizontalAlignment": 0
-						"font": new java.awt.Font( "Segoe UI", 0, 30 )
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-						"x": 0
-						"y": 0
-						"width": 525
-						"height": 35
-					} )
-					add( new FormComponent( "javax.swing.JButton" ) {
-						name: "button1"
-						"text": new FormMessage( null, "MQTTWindow.button1.text" )
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-						"x": 0
-						"y": 262
-					} )
-					add( new FormComponent( "javax.swing.JSeparator" ) {
-						name: "separator8"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-						"width": 385
-						"height": 3
-						"x": 70
-						"y": 40
-					} )
-					add( new FormComponent( "javax.swing.JLabel" ) {
-						name: "label20"
-						"text": new FormMessage( null, "MQTTWindow.label20.text" )
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-						"x": 125
-						"y": 56
-						"width": 65
-						"height": 30
-					} )
-					add( new FormComponent( "javax.swing.JTextField" ) {
-						name: "field_subsribe"
-						"text": new FormMessage( null, "MQTTWindow.field_subsribe.text" )
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-						"x": 190
-						"y": 57
-						"width": 220
-					} )
-					add( new FormComponent( "javax.swing.JButton" ) {
-						name: "button_subscripe"
-						"text": new FormMessage( null, "MQTTWindow.button_subscripe.text" )
-						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button_subscripeMouseClicked", true ) )
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-						"x": 190
-						"y": 90
-						"width": 100
-					} )
-					add( new FormComponent( "javax.swing.JSeparator" ) {
-						name: "separator9"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-						"x": 0
-						"y": 144
-						"width": 525
-						"height": 3
-					} )
-					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
-						name: "scrollPane2"
-						add( new FormComponent( "javax.swing.JTextArea" ) {
-							name: "subscribe_log"
-							"editable": false
-						} )
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-						"x": 50
-						"y": 155
-						"width": 465
-						"height": 102
-					} )
-					add( new FormComponent( "javax.swing.JLabel" ) {
-						name: "label2"
-						"text": new FormMessage( null, "MQTTWindow.label2.text" )
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-						"x": 9
-						"y": 155
-						"height": 30
-						"width": 41
-					} )
-					add( new FormComponent( "javax.swing.JLabel" ) {
-						name: "serror"
-						"horizontalAlignment": 0
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-						"x": 0
-						"y": 120
-						"width": 525
-						"height": 25
-					} )
-				}, new FormLayoutConstraints( null ) {
-					"title": new FormMessage( null, "MQTTWindow.panel2.tab.title" )
 				} )
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 					name: "settings2"
