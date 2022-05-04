@@ -54,7 +54,7 @@ public class MQTTWindow extends JFrame {
     }
 
     private void button_subscripeMouseClicked(MouseEvent e) {
-        Send.Companion.setSUBSRIBE(field_subsribe.getText());
+        Send.Companion.setSUBSCRIBE(field_subsribe.getText());
         Send.Companion.subsrcibe();
     }
 

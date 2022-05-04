@@ -17,6 +17,8 @@ class Buttons {
             Main.window.button_disconnect.text = if (Client?.isConnected == true) "Connect" else "Disconnect"
             Main.window.status.text = "Status: " + if (Client?.isConnected == false) "Connected" else "Disconnected"
 
+            save()
+
             try {
                 if (Client?.isConnected == true) {
                     Client?.disconnect()
@@ -42,6 +44,7 @@ class Buttons {
             if (Main.window.field_channel.text != RECEIVE)
                 RECEIVE = Main.window.field_channel.text
 
+            save()
             conn()
         }
 
