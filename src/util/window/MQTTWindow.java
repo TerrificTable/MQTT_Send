@@ -86,7 +86,9 @@ public class MQTTWindow extends JFrame {
         cerror = new JLabel();
         separator7 = new JSeparator();
         panel2 = new JPanel();
+        sstatus = new JLabel();
         label = new JLabel();
+        button1 = new JButton();
         separator8 = new JSeparator();
         label20 = new JLabel();
         field_subsribe = new JTextField();
@@ -95,6 +97,7 @@ public class MQTTWindow extends JFrame {
         scrollPane2 = new JScrollPane();
         subscribe_log = new JTextArea();
         label2 = new JLabel();
+        serror = new JLabel();
         settings2 = new JPanel();
         label22 = new JLabel();
         connect_on_startup = new JCheckBox();
@@ -278,12 +281,22 @@ public class MQTTWindow extends JFrame {
             {
                 panel2.setLayout(null);
 
+                //---- sstatus ----
+                sstatus.setText(bundle.getString("MQTTWindow.sstatus.text"));
+                panel2.add(sstatus);
+                sstatus.setBounds(5, 5, 190, 25);
+
                 //---- label ----
                 label.setText(bundle.getString("MQTTWindow.label.text"));
                 label.setHorizontalAlignment(SwingConstants.CENTER);
                 label.setFont(new Font("Segoe UI", Font.PLAIN, 30));
                 panel2.add(label);
                 label.setBounds(0, 0, 525, 35);
+
+                //---- button1 ----
+                button1.setText(bundle.getString("MQTTWindow.button1.text"));
+                panel2.add(button1);
+                button1.setBounds(new Rectangle(new Point(0, 262), button1.getPreferredSize()));
                 panel2.add(separator8);
                 separator8.setBounds(70, 40, 385, 3);
 
@@ -324,6 +337,11 @@ public class MQTTWindow extends JFrame {
                 label2.setText(bundle.getString("MQTTWindow.label2.text"));
                 panel2.add(label2);
                 label2.setBounds(9, 155, 41, 30);
+
+                //---- serror ----
+                serror.setHorizontalAlignment(SwingConstants.CENTER);
+                panel2.add(serror);
+                serror.setBounds(0, 120, 525, 25);
 
                 {
                     // compute preferred size
@@ -436,7 +454,9 @@ public class MQTTWindow extends JFrame {
     public JLabel cerror;
     public JSeparator separator7;
     public JPanel panel2;
+    public JLabel sstatus;
     public JLabel label;
+    public JButton button1;
     public JSeparator separator8;
     public JLabel label20;
     public JTextField field_subsribe;
@@ -445,6 +465,7 @@ public class MQTTWindow extends JFrame {
     public JScrollPane scrollPane2;
     public JTextArea subscribe_log;
     public JLabel label2;
+    public JLabel serror;
     public JPanel settings2;
     public JLabel label22;
     public JCheckBox connect_on_startup;

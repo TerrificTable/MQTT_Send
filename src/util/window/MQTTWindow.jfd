@@ -216,6 +216,15 @@ new FormModel {
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 					name: "panel2"
 					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "sstatus"
+						"text": new FormMessage( null, "MQTTWindow.sstatus.text" )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 5
+						"y": 5
+						"width": 190
+						"height": 25
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "label"
 						"text": new FormMessage( null, "MQTTWindow.label.text" )
 						"horizontalAlignment": 0
@@ -225,6 +234,13 @@ new FormModel {
 						"y": 0
 						"width": 525
 						"height": 35
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "button1"
+						"text": new FormMessage( null, "MQTTWindow.button1.text" )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 0
+						"y": 262
 					} )
 					add( new FormComponent( "javax.swing.JSeparator" ) {
 						name: "separator8"
@@ -288,6 +304,15 @@ new FormModel {
 						"y": 155
 						"height": 30
 						"width": 41
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "serror"
+						"horizontalAlignment": 0
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 0
+						"y": 120
+						"width": 525
+						"height": 25
 					} )
 				}, new FormLayoutConstraints( null ) {
 					"title": new FormMessage( null, "MQTTWindow.panel2.tab.title" )
