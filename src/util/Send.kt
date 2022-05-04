@@ -29,9 +29,13 @@ class Send {
 
         fun subsrcibe() {
             try {
+                Main.window.serror.text = ""
+
                 try {
                     Client?.unsubscribe(SUBSCRIBE)
                 } catch (_: Exception) { }
+
+                Main.window.sstatus.text = "Status: Disconnected"
 
                 Client = MqttClient("tcp://$IP:$PORT", MqttClient.generateClientId()) // , persistence
                 val connOpts = MqttConnectOptions()
@@ -47,7 +51,7 @@ class Send {
                     @Throws(Exception::class)
                     override fun messageArrived(topic: String, message: MqttMessage) {
                         if (i < 1) {
-                            Main.window.subscribe_log.text = "${Main.window.subscribe_log.text}[$topic] $message\n"
+                            Main.window.subscribe_log.text = "${Main.window.subscribe_log.text}[#/$topic] $message\n"
                             println("[$topic] $message")
                             i = 0
                         } else {
@@ -60,12 +64,15 @@ class Send {
 
                 Client!!.setCallback(clientCallback)
 
-                println("Subscribing to: $IP/$RECEIVE")
+                println("Subscribing to: $IP/$SUBSCRIBE")
 
                 Client!!.connect(connOpts)
                 Client!!.subscribe(SUBSCRIBE)
+
+                Main.window.sstatus.text = "Status: Connected to $SUBSCRIBE"
             } catch (e: MqttException) {
                 e.printStackTrace()
+                Main.window.serror.text = e.message
             }
         }
 
