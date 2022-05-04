@@ -1,5 +1,6 @@
 package util
 
+import Main
 import org.eclipse.paho.client.mqttv3.*
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence
 import org.json.JSONObject
@@ -9,7 +10,7 @@ class Send {
     companion object {
         var IP: String? = null
         var PORT: String? = null
-        var RECEIVE: String? = null
+        var RECEIVE: String? = "#"
         var SUBSCRIBE: String? = null
         var USERNAME: String? = null
         var PASSWORD: String? = null
@@ -80,9 +81,11 @@ class Send {
 
             if (msg == "") return
 
+            val topic: MqttTopic = Client!!.getTopic(RECEIVE)
+
             val message = MqttMessage(JSONObject.stringToValue(msg).toString().toByteArray())
             message.qos = 2
-            Client?.publish(RECEIVE, message)
+            topic.publish(message)
 
             println("Message sent")
 
