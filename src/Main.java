@@ -23,6 +23,10 @@ public class Main {
         window.status.setText("Status: Disconnected");
         window.button_disconnect.setText("Connect");
 
+        if (window.subscribe_on_start.isSelected()) {
+            Send.Companion.subsrcibe();
+        }
+
         if (window.connect_on_startup.isSelected()) {
             Send.Companion.init();
             window.status.setText("Status: Connected");

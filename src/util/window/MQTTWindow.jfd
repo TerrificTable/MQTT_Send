@@ -216,8 +216,8 @@ new FormModel {
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 					name: "panel2"
 					add( new FormComponent( "javax.swing.JLabel" ) {
-						name: "label19"
-						"text": new FormMessage( null, "MQTTWindow.label19.text" )
+						name: "label"
+						"text": new FormMessage( null, "MQTTWindow.label.text" )
 						"horizontalAlignment": 0
 						"font": new java.awt.Font( "Segoe UI", 0, 30 )
 					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
@@ -331,6 +331,15 @@ new FormModel {
 						"height": 3
 						"x": 70
 						"y": 45
+					} )
+					add( new FormComponent( "javax.swing.JCheckBox" ) {
+						name: "subscribe_on_start"
+						"text": new FormMessage( null, "MQTTWindow.subscribe_on_start.text" )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 15
+						"y": 125
+						"width": 160
+						"height": 25
 					} )
 				}, new FormLayoutConstraints( null ) {
 					"title": new FormMessage( null, "MQTTWindow.settings2.tab.title" )

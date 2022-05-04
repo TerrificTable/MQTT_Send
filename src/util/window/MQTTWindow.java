@@ -54,11 +54,8 @@ public class MQTTWindow extends JFrame {
     }
 
     private void button_subscripeMouseClicked(MouseEvent e) {
-        // TODO
         Send.Companion.setSUBSRIBE(field_subsribe.getText());
         Send.Companion.subsrcibe();
-
-        subscribe_log.setText(subscribe_log.getText() + "HIIII\n");
     }
 
     private void initComponents() {
@@ -89,7 +86,7 @@ public class MQTTWindow extends JFrame {
         cerror = new JLabel();
         separator7 = new JSeparator();
         panel2 = new JPanel();
-        label19 = new JLabel();
+        label = new JLabel();
         separator8 = new JSeparator();
         label20 = new JLabel();
         field_subsribe = new JTextField();
@@ -103,6 +100,7 @@ public class MQTTWindow extends JFrame {
         connect_on_startup = new JCheckBox();
         save_conn_details = new JCheckBox();
         separator10 = new JSeparator();
+        subscribe_on_start = new JCheckBox();
 
         //======== this ========
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -280,12 +278,12 @@ public class MQTTWindow extends JFrame {
             {
                 panel2.setLayout(null);
 
-                //---- label19 ----
-                label19.setText(bundle.getString("MQTTWindow.label19.text"));
-                label19.setHorizontalAlignment(SwingConstants.CENTER);
-                label19.setFont(new Font("Segoe UI", Font.PLAIN, 30));
-                panel2.add(label19);
-                label19.setBounds(0, 0, 525, 35);
+                //---- label ----
+                label.setText(bundle.getString("MQTTWindow.label.text"));
+                label.setHorizontalAlignment(SwingConstants.CENTER);
+                label.setFont(new Font("Segoe UI", Font.PLAIN, 30));
+                panel2.add(label);
+                label.setBounds(0, 0, 525, 35);
                 panel2.add(separator8);
                 separator8.setBounds(70, 40, 385, 3);
 
@@ -368,6 +366,11 @@ public class MQTTWindow extends JFrame {
                 settings2.add(separator10);
                 separator10.setBounds(70, 45, 385, 3);
 
+                //---- subscribe_on_start ----
+                subscribe_on_start.setText(bundle.getString("MQTTWindow.subscribe_on_start.text"));
+                settings2.add(subscribe_on_start);
+                subscribe_on_start.setBounds(15, 125, 160, 25);
+
                 {
                     // compute preferred size
                     Dimension preferredSize = new Dimension();
@@ -433,7 +436,7 @@ public class MQTTWindow extends JFrame {
     public JLabel cerror;
     public JSeparator separator7;
     public JPanel panel2;
-    public JLabel label19;
+    public JLabel label;
     public JSeparator separator8;
     public JLabel label20;
     public JTextField field_subsribe;
@@ -447,5 +450,6 @@ public class MQTTWindow extends JFrame {
     public JCheckBox connect_on_startup;
     public JCheckBox save_conn_details;
     public JSeparator separator10;
+    public JCheckBox subscribe_on_start;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
