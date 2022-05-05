@@ -4,6 +4,7 @@
 
 package util.window;
 
+import javax.swing.border.*;
 import util.Send;
 import util.Configs;
 
@@ -78,7 +79,6 @@ public class MQTTWindow extends JFrame {
         panel2 = new JPanel();
         sstatus = new JLabel();
         label = new JLabel();
-        button1 = new JButton();
         separator8 = new JSeparator();
         label20 = new JLabel();
         field_subsribe = new JTextField();
@@ -221,23 +221,18 @@ public class MQTTWindow extends JFrame {
                 label.setFont(new Font("Segoe UI", Font.PLAIN, 30));
                 panel2.add(label);
                 label.setBounds(0, 0, 525, 35);
-
-                //---- button1 ----
-                button1.setText(bundle.getString("MQTTWindow.button1.text"));
-                panel2.add(button1);
-                button1.setBounds(new Rectangle(new Point(0, 262), button1.getPreferredSize()));
                 panel2.add(separator8);
                 separator8.setBounds(70, 40, 385, 3);
 
                 //---- label20 ----
                 label20.setText(bundle.getString("MQTTWindow.label20.text"));
                 panel2.add(label20);
-                label20.setBounds(125, 56, 65, 30);
+                label20.setBounds(125, 49, 65, 30);
 
                 //---- field_subsribe ----
                 field_subsribe.setText(bundle.getString("MQTTWindow.field_subsribe.text"));
                 panel2.add(field_subsribe);
-                field_subsribe.setBounds(190, 57, 220, field_subsribe.getPreferredSize().height);
+                field_subsribe.setBounds(190, 50, 220, field_subsribe.getPreferredSize().height);
 
                 //---- button_subscripe ----
                 button_subscripe.setText(bundle.getString("MQTTWindow.button_subscripe.text"));
@@ -248,29 +243,31 @@ public class MQTTWindow extends JFrame {
                     }
                 });
                 panel2.add(button_subscripe);
-                button_subscripe.setBounds(190, 90, 100, button_subscripe.getPreferredSize().height);
+                button_subscripe.setBounds(190, 83, 100, button_subscripe.getPreferredSize().height);
                 panel2.add(separator9);
-                separator9.setBounds(0, 144, 525, 3);
+                separator9.setBounds(0, 137, 525, 3);
 
                 //======== scrollPane2 ========
                 {
 
                     //---- subscribe_log ----
                     subscribe_log.setEditable(false);
+                    subscribe_log.setAutoscrolls(false);
+                    subscribe_log.setDragEnabled(true);
                     scrollPane2.setViewportView(subscribe_log);
                 }
                 panel2.add(scrollPane2);
-                scrollPane2.setBounds(50, 155, 465, 102);
+                scrollPane2.setBounds(50, 148, 465, 112);
 
                 //---- label2 ----
                 label2.setText(bundle.getString("MQTTWindow.label2.text"));
                 panel2.add(label2);
-                label2.setBounds(9, 155, 41, 30);
+                label2.setBounds(9, 148, 41, 30);
 
                 //---- serror ----
                 serror.setHorizontalAlignment(SwingConstants.CENTER);
                 panel2.add(serror);
-                serror.setBounds(0, 120, 525, 25);
+                serror.setBounds(0, 111, 525, 25);
 
                 {
                     // compute preferred size
@@ -446,7 +443,6 @@ public class MQTTWindow extends JFrame {
     public JPanel panel2;
     public JLabel sstatus;
     public JLabel label;
-    public JButton button1;
     public JSeparator separator8;
     public JLabel label20;
     public JTextField field_subsribe;
